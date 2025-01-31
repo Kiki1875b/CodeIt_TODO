@@ -57,7 +57,6 @@ public class TodoController {
 
   @DeleteMapping("/api/todo/{id}")
   public DeleteTodoResult deleteTodo(@PathVariable String id){
-    System.out.println(deleteTodoService.deleteTodo(id));
     return deleteTodoService.deleteTodo(id);
   }
 
