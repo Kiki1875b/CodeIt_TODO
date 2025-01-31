@@ -17,6 +17,6 @@ public class CreateTodoService implements CreateTodoUseCase{
   public CreateTodoResult createTodo(CreateTodoCommand command) {
     Todo todo = Todo.create(command.getTitle(), command.getDetails());
     todoRepository.save(todo);
-    return new CreateTodoResult(todo.getUuid(), todo.getTitle(), todo.getDetails(), todo.getCreatedAt(), todo.isCompleted());
+    return new CreateTodoResult(todo.getId(), todo.getTitle(), todo.getDetails(), todo.getCreatedAt(), todo.isCompleted());
   }
 }

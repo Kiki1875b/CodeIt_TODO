@@ -19,13 +19,10 @@ public class UpdateTodoService implements UpdateTodoUseCase{
         () -> new IllegalArgumentException()
     );
 
-    todo.setTitle(command.getTitle());
-    todo.setDetails(command.getDetails());
-    todo.setCompleted(command.isCompleted());
-    todo.complete();
+    todo.update(command.getTitle(), command.getDetails(), command.isCompleted());
 
     todoRepository.save(todo);
 
-    return new UpdateTodoResult(todo.getUuid(), todo.getTitle(), todo.getDetails(), todo.getCreatedAt(), todo.getUpdatedAt(), todo.isCompleted());
+    return new UpdateTodoResult(todo.getId(), todo.getTitle(), todo.getDetails(), todo.getCreatedAt(), todo.getUpdatedAt(), todo.isCompleted());
   }
 }

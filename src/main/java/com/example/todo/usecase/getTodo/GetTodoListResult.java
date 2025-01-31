@@ -7,7 +7,7 @@ import java.util.List;
 
 @Getter
 public class GetTodoListResult {
-  private List<Todo> todoList;
+  private final List<Todo> todoList;
 
   public GetTodoListResult(List<Todo> todoList) {
     this.todoList = todoList;

@@ -17,7 +17,7 @@ public class InMemoryTodoRepositoryAdapter implements TodoRepositoryPort {
 
   @Override
   public void save(Todo todo) {
-    todoStorage.put(todo.getUuid(), todo);
+    todoStorage.put(todo.getId(), todo);
   }
 
   @Override

@@ -18,6 +18,6 @@ public class GetTodoService implements GetTodoUseCase{
     Todo todo = todoRepository.findById(id).orElseThrow(
         () -> new IllegalArgumentException()
     );
-    return new GetTodoResult(todo.getUuid(), todo.getTitle(), todo.getDetails(), todo.getCreatedAt(), todo.isCompleted());
+    return new GetTodoResult(todo.getId(), todo.getTitle(), todo.getDetails(), todo.getCreatedAt(), todo.isCompleted());
   }
 }
